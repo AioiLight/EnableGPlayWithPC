@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -122,6 +123,11 @@ namespace EnableGPlayWithPC
                 FileSelector_GSF.GetPath(),
                 FileSelector_GSFLogin.GetPath()
             };
+        }
+
+        private void LinkLabel_Repo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(@"https://github.com/AioiLight/EnableGPlayWithPC");
         }
     }
 }

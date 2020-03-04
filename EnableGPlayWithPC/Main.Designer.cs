@@ -39,6 +39,7 @@
             this.FileSelector_GSF = new EnableGPlayWithPC.FileSelector();
             this.FileSelector_GMS = new EnableGPlayWithPC.FileSelector();
             this.FileSelector_Vending = new EnableGPlayWithPC.FileSelector();
+            this.LinkLabel_Repo = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // Label_Vending
@@ -93,10 +94,18 @@
             resources.ApplyResources(this.FileSelector_Vending, "FileSelector_Vending");
             this.FileSelector_Vending.Name = "FileSelector_Vending";
             // 
+            // LinkLabel_Repo
+            // 
+            resources.ApplyResources(this.LinkLabel_Repo, "LinkLabel_Repo");
+            this.LinkLabel_Repo.Name = "LinkLabel_Repo";
+            this.LinkLabel_Repo.TabStop = true;
+            this.LinkLabel_Repo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_Repo_LinkClicked);
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LinkLabel_Repo);
             this.Controls.Add(this.Button_Process);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FileSelector_GSFLogin);
@@ -126,6 +135,7 @@
         private FileSelector FileSelector_GSFLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Button_Process;
+        private System.Windows.Forms.LinkLabel LinkLabel_Repo;
     }
 }
 
