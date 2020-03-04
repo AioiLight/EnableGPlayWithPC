@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FileSelector_Extension" xml:space="preserve">
-    <value>.apk</value>
-  </data>
-  <data name="FileSelector_Title" xml:space="preserve">
-    <value>Open .apk file</value>
-  </data>
 </root>
