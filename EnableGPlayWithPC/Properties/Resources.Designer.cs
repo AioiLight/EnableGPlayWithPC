@@ -61,6 +61,15 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   adb.exe に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string AdbPath {
+            get {
+                return ResourceManager.GetString("AdbPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   .apk に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string FileSelector_Extension {

@@ -37,7 +37,7 @@
             this.Label_GSFLogin = new System.Windows.Forms.Label();
             this.FileSelector_GSFLogin = new EnableGPlayWithPC.FileSelector();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Button_Process = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Label_Vending
@@ -126,22 +126,23 @@
             this.label1.Text = "When clicked \"Process\", Your ChallengePad\'s some apps will be uninstalled.\r\nAfter" +
     " that, those apps are re-installed.\r\nDo not touch your device until processed!!";
             // 
-            // button1
+            // Button_Process
             // 
-            this.button1.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button1.Location = new System.Drawing.Point(591, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 57);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Process";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Button_Process.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Button_Process.Location = new System.Drawing.Point(591, 244);
+            this.Button_Process.Name = "Button_Process";
+            this.Button_Process.Size = new System.Drawing.Size(145, 57);
+            this.Button_Process.TabIndex = 13;
+            this.Button_Process.Text = "Process";
+            this.Button_Process.UseVisualStyleBackColor = true;
+            this.Button_Process.Click += new System.EventHandler(this.Button_Process_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 313);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Button_Process);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FileSelector_GSFLogin);
             this.Controls.Add(this.Label_GSFLogin);
@@ -170,7 +171,7 @@
         private System.Windows.Forms.Label Label_GSFLogin;
         private FileSelector FileSelector_GSFLogin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Button_Process;
     }
 }
 

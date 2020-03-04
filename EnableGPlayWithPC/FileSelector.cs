@@ -19,9 +19,14 @@ namespace EnableGPlayWithPC
             InitializeComponent();
         }
 
-        public void Init(string defaultPath)
+        internal void Init(string defaultPath)
         {
             TextBox_Path.Text = defaultPath;
+        }
+
+        internal string GetPath()
+        {
+            return TextBox_Path.Text;
         }
 
         private void Button_FileOpen_Click(object sender, EventArgs e)
