@@ -73,7 +73,7 @@ namespace EnableGPlayWithPC
                 // パスを取得
                 var apks = GetSelectedPath();
                 // それぞれインストール
-                Array.ForEach(apks, apk => packageManager.InstallPackage(apk, true));
+                Array.ForEach(apks, apk => packageManager.InstallPackage(apk, false));
 
                 // Play ストアに権限付与
                 foreach (var perm in Permissions.Vending)
