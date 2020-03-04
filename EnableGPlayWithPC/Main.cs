@@ -82,7 +82,7 @@ namespace EnableGPlayWithPC
                     AdbClient.Instance.ExecuteRemoteCommand(cmd, device, null);
                 }
 
-                // GooglePlay開発者サービスはに権限付与
+                // GooglePlay開発者サービスに権限付与
                 foreach (var perm in Permissions.GMS)
                 {
                     var cmd = $"pm grant {Packages.GMS} {Permissions.Prefix}{perm}";
