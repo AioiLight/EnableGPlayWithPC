@@ -99,6 +99,12 @@ namespace EnableGPlayWithPC
 #endif
 
             var dialog = new TaskDialog();
+            dialog.Caption = "Enable GPlay With PC";
+            dialog.InstructionText = Properties.Resources.Dialog_Successed_Inst;
+            dialog.Text = Properties.Resources.Dialog_Successed_Desc;
+            dialog.Icon = TaskDialogStandardIcon.Information;
+            dialog.OwnerWindowHandle = Handle;
+            dialog.Show();
         }
 
         private string[] GetSelectedPath()

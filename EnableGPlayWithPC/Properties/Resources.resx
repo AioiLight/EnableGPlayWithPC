@@ -134,6 +134,13 @@ Please check adb.exe's path.</value>
   <data name="Dialog_Adb404_Inst" xml:space="preserve">
     <value>adb.exe is not found</value>
   </data>
+  <data name="Dialog_Successed_Desc" xml:space="preserve">
+    <value>Google functions are enabled!
+You can continue using your device.</value>
+  </data>
+  <data name="Dialog_Successed_Inst" xml:space="preserve">
+    <value>Successed!</value>
+  </data>
   <data name="Dialog_TooManyDevices_Desc" xml:space="preserve">
     <value>Too many connected devices.
 Please connect only one devices.</value>

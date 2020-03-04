@@ -108,6 +108,25 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   Google functions are enabled!
+        ///You can continue using your device. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Successed_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_Successed_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Successed! に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Successed_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_Successed_Inst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Too many connected devices.
         ///Please connect only one devices. に類似しているローカライズされた文字列を検索します。
         /// </summary>
