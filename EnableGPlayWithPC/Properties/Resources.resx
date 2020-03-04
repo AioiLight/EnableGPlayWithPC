@@ -120,6 +120,34 @@
   <data name="AdbPath" xml:space="preserve">
     <value>adb.exe</value>
   </data>
+  <data name="Dialog_404_Desc" xml:space="preserve">
+    <value>{0} is not found.
+Please check to exist that file.</value>
+  </data>
+  <data name="Dialog_404_Inst" xml:space="preserve">
+    <value>{0} is not found</value>
+  </data>
+  <data name="Dialog_Adb404_Desc" xml:space="preserve">
+    <value>adb.exe is not found.
+Please check adb.exe's path.</value>
+  </data>
+  <data name="Dialog_Adb404_Inst" xml:space="preserve">
+    <value>adb.exe is not found</value>
+  </data>
+  <data name="Dialog_TooManyDevices_Desc" xml:space="preserve">
+    <value>Too many connected devices.
+Please connect only one devices.</value>
+  </data>
+  <data name="Dialog_TooManyDevices_Inst" xml:space="preserve">
+    <value>Too many connected devices</value>
+  </data>
+  <data name="Dialog_UnableToConnect_Desc" xml:space="preserve">
+    <value>Unable to connect your device.
+Please check connection.</value>
+  </data>
+  <data name="Dialog_UnableToConnect_Inst" xml:space="preserve">
+    <value>Unable to connect your device</value>
+  </data>
   <data name="FileSelector_Extension" xml:space="preserve">
     <value>.apk</value>
   </data>

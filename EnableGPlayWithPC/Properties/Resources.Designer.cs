@@ -70,6 +70,82 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   {0} is not found.
+        ///Please check to exist that file. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_404_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_404_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0} is not found に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_404_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_404_Inst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   adb.exe is not found.
+        ///Please check adb.exe&apos;s path. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Adb404_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_Adb404_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   adb.exe is not found に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Adb404_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_Adb404_Inst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Too many connected devices.
+        ///Please connect only one devices. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_TooManyDevices_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_TooManyDevices_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Too many connected devices に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_TooManyDevices_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_TooManyDevices_Inst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Unable to connect your device.
+        ///Please check connection. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_UnableToConnect_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_UnableToConnect_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Unable to connect your device に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_UnableToConnect_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_UnableToConnect_Inst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   .apk に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string FileSelector_Extension {

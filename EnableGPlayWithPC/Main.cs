@@ -30,9 +30,8 @@ namespace EnableGPlayWithPC
             {
                 if (!File.Exists(path))
                 {
-                    ErrorDialog.ShowError($"{path} is not found",
-                        $"{path} is not found.\n" +
-                        "Please check to exist that file.", this.Handle);
+                    ErrorDialog.ShowError(string.Format(Properties.Resources.Dialog_404_Inst, path),
+                        string.Format(Properties.Resources.Dialog_404_Desc, path), Handle);
                     return;
                 }
             }
@@ -48,8 +47,8 @@ namespace EnableGPlayWithPC
             }
             catch (Exception)
             {
-                ErrorDialog.ShowError("adb.exe is not found", "adb.exe is not found.\n" +
-                            "Please check adb.exe's path.", this.Handle);
+                ErrorDialog.ShowError(Properties.Resources.Dialog_Adb404_Inst,
+                    Properties.Resources.Dialog_Adb404_Desc, Handle);
                 return;
             }
 
@@ -59,9 +58,8 @@ namespace EnableGPlayWithPC
 
                 if (AdbClient.Instance.GetDevices().Count > 1)
                 {
-                    ErrorDialog.ShowError("Too many connected devices",
-                        "Too many connected devices.\n" +
-                        "Please connect only one devices.", this.Handle);
+                    ErrorDialog.ShowError(Properties.Resources.Dialog_TooManyDevices_Inst,
+                        Properties.Resources.Dialog_TooManyDevices_Desc, Handle);
                     return;
                 }
 
@@ -91,9 +89,8 @@ namespace EnableGPlayWithPC
             }
             catch (Exception)
             {
-                ErrorDialog.ShowError("Unable to connect your device",
-                    "Unable to connect your device.\n" +
-                    "Please check connection.", this.Handle);
+                ErrorDialog.ShowError(Properties.Resources.Dialog_UnableToConnect_Inst,
+                    Properties.Resources.Dialog_UnableToConnect_Desc, this.Handle);
                 return;
             }
 

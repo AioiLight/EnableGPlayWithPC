@@ -28,120 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.Label_Vending = new System.Windows.Forms.Label();
             this.Label_GMS = new System.Windows.Forms.Label();
-            this.FileSelector_Vending = new EnableGPlayWithPC.FileSelector();
-            this.FileSelector_GMS = new EnableGPlayWithPC.FileSelector();
-            this.FileSelector_GSF = new EnableGPlayWithPC.FileSelector();
             this.Label_GSF = new System.Windows.Forms.Label();
             this.Label_GSFLogin = new System.Windows.Forms.Label();
-            this.FileSelector_GSFLogin = new EnableGPlayWithPC.FileSelector();
             this.label1 = new System.Windows.Forms.Label();
             this.Button_Process = new System.Windows.Forms.Button();
+            this.FileSelector_GSFLogin = new EnableGPlayWithPC.FileSelector();
+            this.FileSelector_GSF = new EnableGPlayWithPC.FileSelector();
+            this.FileSelector_GMS = new EnableGPlayWithPC.FileSelector();
+            this.FileSelector_Vending = new EnableGPlayWithPC.FileSelector();
             this.SuspendLayout();
             // 
             // Label_Vending
             // 
-            this.Label_Vending.AutoSize = true;
-            this.Label_Vending.Location = new System.Drawing.Point(40, 34);
+            resources.ApplyResources(this.Label_Vending, "Label_Vending");
             this.Label_Vending.Name = "Label_Vending";
-            this.Label_Vending.Size = new System.Drawing.Size(89, 20);
-            this.Label_Vending.TabIndex = 4;
-            this.Label_Vending.Text = "Google Play:";
-            this.Label_Vending.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Label_GMS
             // 
-            this.Label_GMS.AutoSize = true;
-            this.Label_GMS.Location = new System.Drawing.Point(28, 64);
+            resources.ApplyResources(this.Label_GMS, "Label_GMS");
             this.Label_GMS.Name = "Label_GMS";
-            this.Label_GMS.Size = new System.Drawing.Size(101, 40);
-            this.Label_GMS.TabIndex = 5;
-            this.Label_GMS.Text = "Google Mobile\r\nService(GMS):";
-            this.Label_GMS.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // FileSelector_Vending
-            // 
-            this.FileSelector_Vending.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FileSelector_Vending.Location = new System.Drawing.Point(136, 14);
-            this.FileSelector_Vending.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FileSelector_Vending.Name = "FileSelector_Vending";
-            this.FileSelector_Vending.Size = new System.Drawing.Size(600, 40);
-            this.FileSelector_Vending.TabIndex = 6;
-            // 
-            // FileSelector_GMS
-            // 
-            this.FileSelector_GMS.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FileSelector_GMS.Location = new System.Drawing.Point(136, 64);
-            this.FileSelector_GMS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FileSelector_GMS.Name = "FileSelector_GMS";
-            this.FileSelector_GMS.Size = new System.Drawing.Size(600, 40);
-            this.FileSelector_GMS.TabIndex = 7;
-            // 
-            // FileSelector_GSF
-            // 
-            this.FileSelector_GSF.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FileSelector_GSF.Location = new System.Drawing.Point(136, 114);
-            this.FileSelector_GSF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FileSelector_GSF.Name = "FileSelector_GSF";
-            this.FileSelector_GSF.Size = new System.Drawing.Size(600, 40);
-            this.FileSelector_GSF.TabIndex = 8;
             // 
             // Label_GSF
             // 
-            this.Label_GSF.AutoSize = true;
-            this.Label_GSF.Location = new System.Drawing.Point(20, 114);
+            resources.ApplyResources(this.Label_GSF, "Label_GSF");
             this.Label_GSF.Name = "Label_GSF";
-            this.Label_GSF.Size = new System.Drawing.Size(109, 40);
-            this.Label_GSF.TabIndex = 9;
-            this.Label_GSF.Text = "Google Services\r\nFramework:";
-            this.Label_GSF.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Label_GSFLogin
             // 
-            this.Label_GSFLogin.AutoSize = true;
-            this.Label_GSFLogin.Location = new System.Drawing.Point(38, 164);
+            resources.ApplyResources(this.Label_GSFLogin, "Label_GSFLogin");
             this.Label_GSFLogin.Name = "Label_GSFLogin";
-            this.Label_GSFLogin.Size = new System.Drawing.Size(91, 40);
-            this.Label_GSFLogin.TabIndex = 10;
-            this.Label_GSFLogin.Text = "Google Login\r\nService:";
-            this.Label_GSFLogin.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // FileSelector_GSFLogin
-            // 
-            this.FileSelector_GSFLogin.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.FileSelector_GSFLogin.Location = new System.Drawing.Point(136, 164);
-            this.FileSelector_GSFLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FileSelector_GSFLogin.Name = "FileSelector_GSFLogin";
-            this.FileSelector_GSFLogin.Size = new System.Drawing.Size(600, 40);
-            this.FileSelector_GSFLogin.TabIndex = 11;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 244);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(485, 60);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "When clicked \"Process\", Your ChallengePad\'s some apps will be uninstalled.\r\nAfter" +
-    " that, those apps are re-installed.\r\nDo not touch your device until processed!!";
             // 
             // Button_Process
             // 
-            this.Button_Process.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Button_Process.Location = new System.Drawing.Point(591, 244);
+            resources.ApplyResources(this.Button_Process, "Button_Process");
             this.Button_Process.Name = "Button_Process";
-            this.Button_Process.Size = new System.Drawing.Size(145, 57);
-            this.Button_Process.TabIndex = 13;
-            this.Button_Process.Text = "Process";
             this.Button_Process.UseVisualStyleBackColor = true;
             this.Button_Process.Click += new System.EventHandler(this.Button_Process_Click);
             // 
+            // FileSelector_GSFLogin
+            // 
+            resources.ApplyResources(this.FileSelector_GSFLogin, "FileSelector_GSFLogin");
+            this.FileSelector_GSFLogin.Name = "FileSelector_GSFLogin";
+            // 
+            // FileSelector_GSF
+            // 
+            resources.ApplyResources(this.FileSelector_GSF, "FileSelector_GSF");
+            this.FileSelector_GSF.Name = "FileSelector_GSF";
+            // 
+            // FileSelector_GMS
+            // 
+            resources.ApplyResources(this.FileSelector_GMS, "FileSelector_GMS");
+            this.FileSelector_GMS.Name = "FileSelector_GMS";
+            // 
+            // FileSelector_Vending
+            // 
+            resources.ApplyResources(this.FileSelector_Vending, "FileSelector_Vending");
+            this.FileSelector_Vending.Name = "FileSelector_Vending";
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 313);
             this.Controls.Add(this.Button_Process);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FileSelector_GSFLogin);
@@ -152,10 +107,9 @@
             this.Controls.Add(this.FileSelector_Vending);
             this.Controls.Add(this.Label_GMS);
             this.Controls.Add(this.Label_Vending);
-            this.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
-            this.Text = "Enable GPlay With PC";
             this.ResumeLayout(false);
             this.PerformLayout();
 
