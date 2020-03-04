@@ -52,10 +52,8 @@ namespace EnableGPlayWithPC
                 return;
             }
 
-#if !DEBUG
             try
             {
-#endif
                 var device = AdbClient.Instance.GetDevices().First();
 
                 if (AdbClient.Instance.GetDevices().Count > 1)
@@ -68,7 +66,17 @@ namespace EnableGPlayWithPC
                 var packageManager = new PackageManager(device);
 
                 // それぞれアンインストール
-                Array.ForEach(Packages.PackageNames, pkg => packageManager.UninstallPackage(pkg));
+                foreach (var pkg in Packages.PackageNames)
+                {
+                    try
+                    {
+                        packageManager.UninstallPackage(pkg);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
 
                 // パスを取得
                 var apks = GetSelectedPath();
@@ -88,15 +96,13 @@ namespace EnableGPlayWithPC
                     var cmd = $"pm grant {Packages.GMS} {Permissions.Prefix}{perm}";
                     AdbClient.Instance.ExecuteRemoteCommand(cmd, device, null);
                 }
-#if !DEBUG
-        }
+            }
             catch (Exception)
             {
                 ErrorDialog.ShowError(Properties.Resources.Dialog_UnableToConnect_Inst,
                     Properties.Resources.Dialog_UnableToConnect_Desc, this.Handle);
                 return;
             }
-#endif
 
             var dialog = new TaskDialog();
             dialog.Caption = "Enable GPlay With PC";
