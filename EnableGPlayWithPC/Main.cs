@@ -116,13 +116,8 @@ namespace EnableGPlayWithPC
 
         private string[] GetSelectedPath()
         {
-            return new string[]
-            {
-                FileSelector_Vending.GetPath(),
-                FileSelector_GMS.GetPath(),
-                FileSelector_GSF.GetPath(),
-                FileSelector_GSFLogin.GetPath()
-            };
+            var files = new FileSelector[] { FileSelector_Vending, FileSelector_GMS, FileSelector_GSF, FileSelector_GSFLogin };
+            return files.Select(f => f.GetPath()).ToArray();
         }
 
         private void LinkLabel_Repo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
