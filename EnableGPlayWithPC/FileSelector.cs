@@ -15,6 +15,7 @@ namespace EnableGPlayWithPC
         internal void Init(string defaultPath)
         {
             TextBox_Path.Text = defaultPath;
+            TextBox_Path.Select(TextBox_Path.Text.Length, 0);
         }
 
         internal string GetPath()
