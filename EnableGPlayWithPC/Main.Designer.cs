@@ -116,9 +116,11 @@
             this.Controls.Add(this.FileSelector_Vending);
             this.Controls.Add(this.Label_GMS);
             this.Controls.Add(this.Label_Vending);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
+            this.ShowIcon = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
