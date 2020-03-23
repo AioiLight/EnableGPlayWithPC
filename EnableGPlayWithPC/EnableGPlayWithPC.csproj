@@ -120,6 +120,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(SolutionDir)platform-tools\*" "$(TargetDir)*"</PostBuildEvent>
+    <PostBuildEvent>copy "$(SolutionDir)platform-tools\*" "$(TargetDir)*"
+copy "$(SolutionDir)README.txt" "$(TargetDir)README.txt"</PostBuildEvent>
   </PropertyGroup>
 </Project>
