@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Apks.cs" />
-    <Compile Include="ErrorDialog.cs" />
+    <Compile Include="Dialog.cs" />
     <Compile Include="FileSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>

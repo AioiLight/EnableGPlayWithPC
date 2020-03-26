@@ -134,6 +134,13 @@ Please check adb.exe's path.</value>
   <data name="Dialog_Adb404_Inst" xml:space="preserve">
     <value>adb.exe is not found</value>
   </data>
+  <data name="Dialog_PermNotGranted_Desc" xml:space="preserve">
+    <value>Unable to grant permission to {0}</value>
+  </data>
+  <data name="Dialog_PermNotGranted_Inst" xml:space="preserve">
+    <value>Unable to grant "{0}" permission to {1}.
+Apps may not work perfectly.</value>
+  </data>
   <data name="Dialog_Successed_Desc" xml:space="preserve">
     <value>Google functions are enabled!
 You can continue using your device.</value>
@@ -160,5 +167,17 @@ Please check connection.</value>
   </data>
   <data name="FileSelector_Title" xml:space="preserve">
     <value>Open .apk file</value>
+  </data>
+  <data name="NotGranted_Cancel" xml:space="preserve">
+    <value>Stop install processing</value>
+  </data>
+  <data name="NotGranted_Continue" xml:space="preserve">
+    <value>Ignore error, and continue processing</value>
+  </data>
+  <data name="NotGranted_HideDetail" xml:space="preserve">
+    <value>Hide details</value>
+  </data>
+  <data name="NotGranted_ShowDetail" xml:space="preserve">
+    <value>Show details</value>
   </data>
 </root>
