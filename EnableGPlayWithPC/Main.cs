@@ -113,7 +113,7 @@ namespace EnableGPlayWithPC
                 {
                     var receiver = new ConsoleOutputReceiver();
                     var cmd = $"pm grant {Packages.GMS} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, null);
+                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
 
                     if (!IsPermissionGranted(receiver.ToString()))
                     {
