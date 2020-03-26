@@ -111,8 +111,25 @@ namespace EnableGPlayWithPC
                 // GooglePlay開発者サービスに権限付与
                 foreach (var perm in Permissions.GMS)
                 {
+                    var receiver = new ConsoleOutputReceiver();
                     var cmd = $"pm grant {Packages.GMS} {Permissions.Prefix}{perm}";
                     AdbClient.Instance.ExecuteRemoteCommand(cmd, device, null);
+
+                    if (!IsPermissionGranted(receiver.ToString()))
+                    {
+                        if (!Dialog.NotGranted(
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
+                                Packages.GMS),
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
+                                Packages.GMS,
+                                perm),
+                            receiver.ToString(),
+                            Handle))
+                        {
+                            // 権限付与に失敗してなおかつキャンセルされた
+                            return;
+                        }
+                    }
                 }
             }
             catch (Exception)
