@@ -27,10 +27,6 @@ namespace EnableGPlayWithPC
         /// <returns></returns>
         internal static bool NotGranted(string instruction, string desc, string detail, IntPtr handle)
         {
-            var dialog = new TaskDialog();
-            dialog.Caption = "Enable GPlay With PC";
-            dialog.InstructionText = instruction;
-            dialog.Text = desc;
             dialog.Icon = TaskDialogStandardIcon.Error;
             dialog.OwnerWindowHandle = handle;
 
@@ -50,6 +46,19 @@ namespace EnableGPlayWithPC
             dialog.Controls.Add(cancelButton);
 
             return dialog.Show() == TaskDialogResult.Ok ? true : false;
+        }
+      
+        internal static TaskDialogResult ShowQuestion(string instruction, string desc, IntPtr handle)
+        {
+            var dialog = new TaskDialog();
+            dialog.Caption = "Enable GPlay With PC";
+            dialog.InstructionText = instruction;
+            dialog.Text = desc;
+  
+            dialog.Icon = TaskDialogStandardIcon.None;
+            dialog.OwnerWindowHandle = handle;
+            dialog.StandardButtons = TaskDialogStandardButtons.Ok | TaskDialogStandardButtons.Cancel;
+            return dialog.Show();
         }
     }
 }

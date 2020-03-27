@@ -70,6 +70,24 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   Cancel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Continue に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Continue {
+            get {
+                return ResourceManager.GetString("Continue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0} is not found.
         ///Please check to exist that file. に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -116,6 +134,15 @@ namespace EnableGPlayWithPC.Properties {
             }
         }
         
+        ///   {0} is not a benesse product tablet.
+        ///Would you like continue? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Not_Benesse_Tab_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_Not_Benesse_Tab_Desc", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Unable to grant &quot;{0}&quot; permission to {1}.
         ///Apps may not work perfectly. に類似しているローカライズされた文字列を検索します。
@@ -123,6 +150,13 @@ namespace EnableGPlayWithPC.Properties {
         internal static string Dialog_PermNotGranted_Inst {
             get {
                 return ResourceManager.GetString("Dialog_PermNotGranted_Inst", resourceCulture);
+            }
+        }
+        ///   Benesse tablet not found. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Not_Benesse_Tab_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_Not_Benesse_Tab_Inst", resourceCulture);
             }
         }
         

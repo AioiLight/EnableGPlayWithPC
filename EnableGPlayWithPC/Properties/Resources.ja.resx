@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>続行</value>
+  </data>
   <data name="Dialog_404_Desc" xml:space="preserve">
     <value>{0} が見つかりません。
 そのファイルが存在するかどうか確認してください。</value>
@@ -137,6 +143,12 @@ adb.exe が存在するかどうか確認してください。</value>
   <data name="Dialog_PermNotGranted_Inst" xml:space="preserve">
     <value>{1} に権限 "{0}" を付与することができませんでした。
 アプリは完全に動作しない可能性があります。</value>
+  <data name="Dialog_Not_Benesse_Tab_Desc" xml:space="preserve">
+    <value>{0}は動作確認済みのチャレンジパッドではありません。
+それでも実行しますか。</value>
+  </data>
+  <data name="Dialog_Not_Benesse_Tab_Inst" xml:space="preserve">
+    <value>チャレンジパッドが見つかりませんでした。</value>
   </data>
   <data name="Dialog_Successed_Desc" xml:space="preserve">
     <value>Google の機能は有効化されました！

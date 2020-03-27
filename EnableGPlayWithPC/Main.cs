@@ -64,6 +64,23 @@ namespace EnableGPlayWithPC
                     return;
                 }
 
+                var receiver = new ConsoleOutputReceiver();
+
+                AdbClient.Instance.ExecuteRemoteCommand($"getprop ro.build.product", device, receiver);
+                var product = receiver.ToString();
+                product = product.Substring(0, product.Length - 2); // 余計な改行は入れさせない
+
+                Console.WriteLine(product.Length);
+
+                if (!BenesseTabs.Names.Contains(product))
+                { // 出力が名前にあるか確認
+                    var result =
+                        Dialog.ShowQuestion(Properties.Resources.Dialog_Not_Benesse_Tab_Inst,
+                        string.Format(Properties.Resources.Dialog_Not_Benesse_Tab_Desc, product), Handle);
+
+                    if (result != TaskDialogResult.Ok) return;
+                }
+
                 var packageManager = new PackageManager(device);
 
                 // それぞれアンインストール
