@@ -108,6 +108,24 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   {0} is not a benesse product tablet. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Not_Benesse_Tab_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_Not_Benesse_Tab_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Benesse tablet not found. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_Not_Benesse_Tab_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_Not_Benesse_Tab_Inst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Google functions are enabled!
         ///You can continue using your device. に類似しているローカライズされた文字列を検索します。
         /// </summary>

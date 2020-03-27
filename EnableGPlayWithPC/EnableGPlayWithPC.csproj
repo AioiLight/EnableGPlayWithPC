@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Apks.cs" />
+    <Compile Include="BenesseTabs.cs" />
     <Compile Include="ErrorDialog.cs" />
     <Compile Include="FileSelector.cs">
       <SubType>UserControl</SubType>
@@ -117,6 +118,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SharpAdbClient.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
