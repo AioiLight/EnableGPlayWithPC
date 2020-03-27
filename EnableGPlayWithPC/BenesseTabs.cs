@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EnableGPlayWithPC
 {
-    class BenesseTabs
+    internal static class BenesseTabs
     {
         internal static string[] Names = new string[]
         {
