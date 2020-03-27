@@ -120,6 +120,12 @@
   <data name="AdbPath" xml:space="preserve">
     <value>adb.exe</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
   <data name="Dialog_404_Desc" xml:space="preserve">
     <value>{0} is not found.
 Please check to exist that file.</value>
@@ -133,6 +139,13 @@ Please check adb.exe's path.</value>
   </data>
   <data name="Dialog_Adb404_Inst" xml:space="preserve">
     <value>adb.exe is not found</value>
+  </data>
+  <data name="Dialog_Not_Benesse_Tab_Desc" xml:space="preserve">
+    <value>{0} is not a benesse product tablet.
+Would you like continue?</value>
+  </data>
+  <data name="Dialog_Not_Benesse_Tab_Inst" xml:space="preserve">
+    <value>Benesse tablet not found.</value>
   </data>
   <data name="Dialog_Successed_Desc" xml:space="preserve">
     <value>Google functions are enabled!
