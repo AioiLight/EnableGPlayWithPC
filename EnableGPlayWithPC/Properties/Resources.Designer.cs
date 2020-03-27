@@ -126,6 +126,14 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   Unable to grant permission to {0} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_PermNotGranted_Desc {
+            get {
+                return ResourceManager.GetString("Dialog_PermNotGranted_Desc", resourceCulture);
+            }
+        }
+        
         ///   {0} is not a benesse product tablet.
         ///Would you like continue? に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -136,6 +144,14 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   Unable to grant &quot;{0}&quot; permission to {1}.
+        ///Apps may not work perfectly. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Dialog_PermNotGranted_Inst {
+            get {
+                return ResourceManager.GetString("Dialog_PermNotGranted_Inst", resourceCulture);
+            }
+        }
         ///   Benesse tablet not found. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Dialog_Not_Benesse_Tab_Inst {
@@ -216,6 +232,42 @@ namespace EnableGPlayWithPC.Properties {
         internal static string FileSelector_Title {
             get {
                 return ResourceManager.GetString("FileSelector_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Stop install processing に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NotGranted_Cancel {
+            get {
+                return ResourceManager.GetString("NotGranted_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ignore error, and continue processing に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NotGranted_Continue {
+            get {
+                return ResourceManager.GetString("NotGranted_Continue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Hide details に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NotGranted_HideDetail {
+            get {
+                return ResourceManager.GetString("NotGranted_HideDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Show details に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NotGranted_ShowDetail {
+            get {
+                return ResourceManager.GetString("NotGranted_ShowDetail", resourceCulture);
             }
         }
     }

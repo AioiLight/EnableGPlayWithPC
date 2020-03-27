@@ -137,6 +137,12 @@ adb.exe が存在するかどうか確認してください。</value>
   <data name="Dialog_Adb404_Inst" xml:space="preserve">
     <value>adb.exe が見つかりません</value>
   </data>
+  <data name="Dialog_PermNotGranted_Desc" xml:space="preserve">
+    <value>{0} に権限を付与することができませんでした</value>
+  </data>
+  <data name="Dialog_PermNotGranted_Inst" xml:space="preserve">
+    <value>{1} に権限 "{0}" を付与することができませんでした。
+アプリは完全に動作しない可能性があります。</value>
   <data name="Dialog_Not_Benesse_Tab_Desc" xml:space="preserve">
     <value>{0}は動作確認済みのチャレンジパッドではありません。
 それでも実行しますか。</value>
@@ -167,5 +173,17 @@ adb.exe が存在するかどうか確認してください。</value>
   </data>
   <data name="FileSelector_Title" xml:space="preserve">
     <value>.apk ファイルを開く</value>
+  </data>
+  <data name="NotGranted_Cancel" xml:space="preserve">
+    <value>インストール作業を中止する</value>
+  </data>
+  <data name="NotGranted_Continue" xml:space="preserve">
+    <value>エラーを無視して処理を続行する</value>
+  </data>
+  <data name="NotGranted_HideDetail" xml:space="preserve">
+    <value>詳細情報を非表示</value>
+  </data>
+  <data name="NotGranted_ShowDetail" xml:space="preserve">
+    <value>詳細情報を表示</value>
   </data>
 </root>

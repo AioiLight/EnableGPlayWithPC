@@ -31,7 +31,7 @@ namespace EnableGPlayWithPC
             {
                 if (!File.Exists(path))
                 {
-                    Dialog.ShowError(string.Format(Properties.Resources.Dialog_404_Inst, path),
+                    Dialog.Error(string.Format(Properties.Resources.Dialog_404_Inst, path),
                         string.Format(Properties.Resources.Dialog_404_Desc, path), Handle);
                     return;
                 }
@@ -48,7 +48,7 @@ namespace EnableGPlayWithPC
             }
             catch (Exception)
             {
-                Dialog.ShowError(Properties.Resources.Dialog_Adb404_Inst,
+                Dialog.Error(Properties.Resources.Dialog_Adb404_Inst,
                     Properties.Resources.Dialog_Adb404_Desc, Handle);
                 return;
             }
@@ -59,7 +59,7 @@ namespace EnableGPlayWithPC
 
                 if (AdbClient.Instance.GetDevices().Count > 1)
                 {
-                    Dialog.ShowError(Properties.Resources.Dialog_TooManyDevices_Inst,
+                    Dialog.Error(Properties.Resources.Dialog_TooManyDevices_Inst,
                         Properties.Resources.Dialog_TooManyDevices_Desc, Handle);
                     return;
                 }
@@ -104,20 +104,54 @@ namespace EnableGPlayWithPC
                 // Play ストアに権限付与
                 foreach (var perm in Permissions.Vending)
                 {
+                    var receiver = new ConsoleOutputReceiver();
                     var cmd = $"pm grant {Packages.Vending} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, null);
+                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
+
+                    if (!IsPermissionGranted(receiver.ToString()))
+                    {
+                        if (!Dialog.NotGranted(
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
+                                Packages.Vending),
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
+                                Packages.Vending,
+                                perm),
+                            receiver.ToString(),
+                            Handle))
+                        {
+                            // 権限付与に失敗してなおかつキャンセルされた
+                            return;
+                        }
+                    }
                 }
 
                 // GooglePlay開発者サービスに権限付与
                 foreach (var perm in Permissions.GMS)
                 {
+                    var receiver = new ConsoleOutputReceiver();
                     var cmd = $"pm grant {Packages.GMS} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, null);
+                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
+
+                    if (!IsPermissionGranted(receiver.ToString()))
+                    {
+                        if (!Dialog.NotGranted(
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
+                                Packages.GMS),
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
+                                Packages.GMS,
+                                perm),
+                            receiver.ToString(),
+                            Handle))
+                        {
+                            // 権限付与に失敗してなおかつキャンセルされた
+                            return;
+                        }
+                    }
                 }
             }
             catch (Exception)
             {
-                Dialog.ShowError(Properties.Resources.Dialog_UnableToConnect_Inst,
+                Dialog.Error(Properties.Resources.Dialog_UnableToConnect_Inst,
                     Properties.Resources.Dialog_UnableToConnect_Desc, this.Handle);
                 return;
             }
@@ -135,6 +169,21 @@ namespace EnableGPlayWithPC
         {
             var files = new FileSelector[] { FileSelector_Vending, FileSelector_GMS, FileSelector_GSF, FileSelector_GSFLogin };
             return files.Select(f => f.GetPath()).ToArray();
+        }
+
+        private bool IsPermissionGranted(string str)
+        {
+            var lines = str.Split('\n');
+            if (lines.Where(s => s.StartsWith("Operation not allowed:")).Any())
+            {
+                // Operation not allowed:で始まる行が少なくともひとつはある
+                return false;
+            }
+            else
+            {
+                // パーミション付与に成功している
+                return true;
+            }
         }
 
         private void LinkLabel_Repo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
