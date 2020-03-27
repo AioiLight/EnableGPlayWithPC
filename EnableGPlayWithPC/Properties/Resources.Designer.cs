@@ -70,6 +70,24 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
+        ///   Cancel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Continue に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Continue {
+            get {
+                return ResourceManager.GetString("Continue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0} is not found.
         ///Please check to exist that file. に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -108,7 +126,8 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
-        ///   {0} is not a benesse product tablet. に類似しているローカライズされた文字列を検索します。
+        ///   {0} is not a benesse product tablet.
+        ///Would you like continue? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Dialog_Not_Benesse_Tab_Desc {
             get {

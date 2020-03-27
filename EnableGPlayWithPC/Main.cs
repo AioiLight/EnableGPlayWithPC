@@ -31,7 +31,7 @@ namespace EnableGPlayWithPC
             {
                 if (!File.Exists(path))
                 {
-                    ErrorDialog.ShowError(string.Format(Properties.Resources.Dialog_404_Inst, path),
+                    Dialog.ShowError(string.Format(Properties.Resources.Dialog_404_Inst, path),
                         string.Format(Properties.Resources.Dialog_404_Desc, path), Handle);
                     return;
                 }
@@ -48,7 +48,7 @@ namespace EnableGPlayWithPC
             }
             catch (Exception)
             {
-                ErrorDialog.ShowError(Properties.Resources.Dialog_Adb404_Inst,
+                Dialog.ShowError(Properties.Resources.Dialog_Adb404_Inst,
                     Properties.Resources.Dialog_Adb404_Desc, Handle);
                 return;
             }
@@ -59,7 +59,7 @@ namespace EnableGPlayWithPC
 
                 if (AdbClient.Instance.GetDevices().Count > 1)
                 {
-                    ErrorDialog.ShowError(Properties.Resources.Dialog_TooManyDevices_Inst,
+                    Dialog.ShowError(Properties.Resources.Dialog_TooManyDevices_Inst,
                         Properties.Resources.Dialog_TooManyDevices_Desc, Handle);
                     return;
                 }
@@ -74,9 +74,11 @@ namespace EnableGPlayWithPC
 
                 if (!BenesseTabs.Names.Contains(product))
                 { // 出力が名前にあるか確認
-                    ErrorDialog.ShowError(Properties.Resources.Dialog_Not_Benesse_Tab_Inst,
+                    TaskDialogResult result =
+                        Dialog.ShowQuestion(Properties.Resources.Dialog_Not_Benesse_Tab_Inst,
                         string.Format(Properties.Resources.Dialog_Not_Benesse_Tab_Desc, product), Handle);
-                    return;
+
+                    if (TaskDialogResult.Ok != result) return;
                 }
 
                 var packageManager = new PackageManager(device);
@@ -115,7 +117,7 @@ namespace EnableGPlayWithPC
             }
             catch (Exception)
             {
-                ErrorDialog.ShowError(Properties.Resources.Dialog_UnableToConnect_Inst,
+                Dialog.ShowError(Properties.Resources.Dialog_UnableToConnect_Inst,
                     Properties.Resources.Dialog_UnableToConnect_Desc, this.Handle);
                 return;
             }

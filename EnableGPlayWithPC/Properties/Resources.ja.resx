@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>続行</value>
+  </data>
   <data name="Dialog_404_Desc" xml:space="preserve">
     <value>{0} が見つかりません。
 そのファイルが存在するかどうか確認してください。</value>
@@ -132,7 +138,8 @@ adb.exe が存在するかどうか確認してください。</value>
     <value>adb.exe が見つかりません</value>
   </data>
   <data name="Dialog_Not_Benesse_Tab_Desc" xml:space="preserve">
-    <value>{0}は動作確認済みのチャレンジパッドではありません。</value>
+    <value>{0}は動作確認済みのチャレンジパッドではありません。
+それでも実行しますか。</value>
   </data>
   <data name="Dialog_Not_Benesse_Tab_Inst" xml:space="preserve">
     <value>チャレンジパッドが見つかりませんでした。</value>
