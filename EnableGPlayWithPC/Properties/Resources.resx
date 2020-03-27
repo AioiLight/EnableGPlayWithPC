@@ -146,6 +146,7 @@ Please check adb.exe's path.</value>
   <data name="Dialog_PermNotGranted_Inst" xml:space="preserve">
     <value>Unable to grant "{0}" permission to {1}.
 Apps may not work perfectly.</value>
+  </data>
   <data name="Dialog_Not_Benesse_Tab_Desc" xml:space="preserve">
     <value>{0} is not a benesse product tablet.
 Would you like continue?</value>

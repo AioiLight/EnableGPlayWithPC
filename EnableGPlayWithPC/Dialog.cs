@@ -27,6 +27,7 @@ namespace EnableGPlayWithPC
         /// <returns></returns>
         internal static bool NotGranted(string instruction, string desc, string detail, IntPtr handle)
         {
+            var dialog = new TaskDialog();
             dialog.Icon = TaskDialogStandardIcon.Error;
             dialog.OwnerWindowHandle = handle;
 
