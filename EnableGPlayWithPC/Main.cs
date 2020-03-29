@@ -150,6 +150,30 @@ namespace EnableGPlayWithPC
                         }
                     }
                 }
+
+                // Google Service Frameworkに権限付与。
+                foreach (var perm in Permissions.GSF)
+                {
+                    var receiver = new ConsoleOutputReceiver();
+                    var cmd = $"pm grant {Packages.GSF} {Permissions.Prefix}{perm}";
+                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
+
+                    if (!IsPermissionGranted(receiver.ToString()))
+                    {
+                        if (!Dialog.NotGranted(
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
+                                Packages.GSF),
+                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
+                                Packages.GSF,
+                                perm),
+                            receiver.ToString(),
+                            Handle))
+                        {
+                            // 権限付与に失敗してなおかつキャンセルされた
+                            return;
+                        }
+                    }
+                }
             }
             catch (Exception)
             {
