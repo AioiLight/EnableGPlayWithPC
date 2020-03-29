@@ -104,74 +104,38 @@ namespace EnableGPlayWithPC
                 Array.ForEach(apks, apk => packageManager.InstallPackage(apk, false));
 
                 // Play ストアに権限付与
-                foreach (var perm in Permissions.Vending)
                 {
-                    var receiver = new ConsoleOutputReceiver();
-                    var cmd = $"pm grant {Packages.Vending} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
-
-                    if (!IsPermissionGranted(receiver.ToString()))
+                    var result = AndroidDebugBridgeUtils.GrantPermissions(Packages.Vending,
+                            Permissions.Vending,
+                            device,
+                            Handle);
+                    if (!result)
                     {
-                        if (!Dialog.NotGranted(
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
-                                Packages.Vending),
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
-                                Packages.Vending,
-                                perm),
-                            receiver.ToString(),
-                            Handle))
-                        {
-                            // 権限付与に失敗してなおかつキャンセルされた
-                            return;
-                        }
+                        return;
                     }
                 }
 
                 // GooglePlay開発者サービスに権限付与
-                foreach (var perm in Permissions.GMS)
                 {
-                    var receiver = new ConsoleOutputReceiver();
-                    var cmd = $"pm grant {Packages.GMS} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
-
-                    if (!IsPermissionGranted(receiver.ToString()))
+                    var result = AndroidDebugBridgeUtils.GrantPermissions(Packages.GMS,
+                            Permissions.GMS,
+                            device,
+                            Handle);
+                    if (!result)
                     {
-                        if (!Dialog.NotGranted(
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
-                                Packages.GMS),
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
-                                Packages.GMS,
-                                perm),
-                            receiver.ToString(),
-                            Handle))
-                        {
-                            // 権限付与に失敗してなおかつキャンセルされた
-                            return;
-                        }
+                        return;
                     }
                 }
 
                 // Google Service Frameworkに権限付与。
-                foreach (var perm in Permissions.GSF)
                 {
-                    var receiver = new ConsoleOutputReceiver();
-                    var cmd = $"pm grant {Packages.GSF} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
-
-                    if (!IsPermissionGranted(receiver.ToString()))
+                    var result = AndroidDebugBridgeUtils.GrantPermissions(Packages.GSF,
+                            Permissions.GSF,
+                            device,
+                            Handle);
+                    if (!result)
                     {
-                        if (!Dialog.NotGranted(
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
-                                Packages.GSF),
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
-                                Packages.GSF,
-                                perm),
-                            receiver.ToString(),
-                            Handle))
-                        {
-                            // 権限付与に失敗してなおかつキャンセルされた
-                            return;
-                        }
+                        return;
                     }
                 }
             }
