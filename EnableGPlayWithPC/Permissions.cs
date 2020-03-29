@@ -34,5 +34,12 @@
             "DELETE_PACKAGES",
             "DEVICE_POWER"
         };
+
+        internal static string[] GSF = new string[]
+        {
+            "DUMP",
+            "GET_APP_OPS_STATS",
+            "WRITE_SECURE_SETTINGS"
+        };
     }
 }
