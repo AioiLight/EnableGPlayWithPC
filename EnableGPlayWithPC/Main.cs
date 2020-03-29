@@ -161,21 +161,6 @@ namespace EnableGPlayWithPC
             return files.Select(f => f.GetPath()).ToArray();
         }
 
-        private bool IsPermissionGranted(string str)
-        {
-            var lines = str.Split('\n');
-            if (lines.Where(s => s.StartsWith("Operation not allowed:")).Any())
-            {
-                // Operation not allowed:で始まる行が少なくともひとつはある
-                return false;
-            }
-            else
-            {
-                // パーミション付与に成功している
-                return true;
-            }
-        }
-
         private void LinkLabel_Repo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(@"https://github.com/AioiLight/EnableGPlayWithPC");
