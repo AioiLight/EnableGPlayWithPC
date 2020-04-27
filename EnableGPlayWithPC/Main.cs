@@ -104,50 +104,38 @@ namespace EnableGPlayWithPC
                 Array.ForEach(apks, apk => packageManager.InstallPackage(apk, false));
 
                 // Play ストアに権限付与
-                foreach (var perm in Permissions.Vending)
                 {
-                    var receiver = new ConsoleOutputReceiver();
-                    var cmd = $"pm grant {Packages.Vending} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
-
-                    if (!IsPermissionGranted(receiver.ToString()))
+                    var result = AndroidDebugBridgeUtils.GrantPermissions(Packages.Vending,
+                            Permissions.Vending,
+                            device,
+                            Handle);
+                    if (!result)
                     {
-                        if (!Dialog.NotGranted(
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
-                                Packages.Vending),
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
-                                Packages.Vending,
-                                perm),
-                            receiver.ToString(),
-                            Handle))
-                        {
-                            // 権限付与に失敗してなおかつキャンセルされた
-                            return;
-                        }
+                        return;
                     }
                 }
 
                 // GooglePlay開発者サービスに権限付与
-                foreach (var perm in Permissions.GMS)
                 {
-                    var receiver = new ConsoleOutputReceiver();
-                    var cmd = $"pm grant {Packages.GMS} {Permissions.Prefix}{perm}";
-                    AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
-
-                    if (!IsPermissionGranted(receiver.ToString()))
+                    var result = AndroidDebugBridgeUtils.GrantPermissions(Packages.GMS,
+                            Permissions.GMS,
+                            device,
+                            Handle);
+                    if (!result)
                     {
-                        if (!Dialog.NotGranted(
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
-                                Packages.GMS),
-                            string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
-                                Packages.GMS,
-                                perm),
-                            receiver.ToString(),
-                            Handle))
-                        {
-                            // 権限付与に失敗してなおかつキャンセルされた
-                            return;
-                        }
+                        return;
+                    }
+                }
+
+                // Google Service Frameworkに権限付与。
+                {
+                    var result = AndroidDebugBridgeUtils.GrantPermissions(Packages.GSF,
+                            Permissions.GSF,
+                            device,
+                            Handle);
+                    if (!result)
+                    {
+                        return;
                     }
                 }
             }
@@ -171,21 +159,6 @@ namespace EnableGPlayWithPC
         {
             var files = new FileSelector[] { FileSelector_Vending, FileSelector_GMS, FileSelector_GSF, FileSelector_GSFLogin };
             return files.Select(f => f.GetPath()).ToArray();
-        }
-
-        private bool IsPermissionGranted(string str)
-        {
-            var lines = str.Split('\n');
-            if (lines.Where(s => s.StartsWith("Operation not allowed:")).Any())
-            {
-                // Operation not allowed:で始まる行が少なくともひとつはある
-                return false;
-            }
-            else
-            {
-                // パーミション付与に成功している
-                return true;
-            }
         }
 
         private void LinkLabel_Repo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

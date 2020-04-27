@@ -20,5 +20,12 @@
             "INTERACT_ACROSS_USERS",
             "GET_APP_OPS_STATS"
         };
+
+        internal static string[] GSF = new string[]
+        {
+            "DUMP",
+            "GET_APP_OPS_STATS",
+            "WRITE_SECURE_SETTINGS"
+        };
     }
 }
