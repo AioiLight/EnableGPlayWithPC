@@ -9,10 +9,10 @@
 
         internal static string[] PackageNames = new string[]
         {
-            Vending,
             GMS,
             GSFLogin,
-            GSF
+            GSF,
+            Vending
         };
     }
 }

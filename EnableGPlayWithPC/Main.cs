@@ -157,7 +157,7 @@ namespace EnableGPlayWithPC
 
         private string[] GetSelectedPath()
         {
-            var files = new FileSelector[] { FileSelector_Vending, FileSelector_GMS, FileSelector_GSF, FileSelector_GSFLogin };
+            var files = new FileSelector[] { FileSelector_GMS, FileSelector_GSF, FileSelector_GSFLogin, FileSelector_Vending };
             return files.Select(f => f.GetPath()).ToArray();
         }
 
