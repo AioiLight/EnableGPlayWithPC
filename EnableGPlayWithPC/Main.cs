@@ -140,6 +140,10 @@ namespace EnableGPlayWithPC
                         return;
                     }
                 }
+
+            // もういちどGMSをインストール。
+            packageManager.InstallPackage(FileSelector_GMS.GetPath(), true);
+
 #if !DEBUG
             }
             catch (Exception)
