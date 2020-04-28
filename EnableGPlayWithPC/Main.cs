@@ -53,8 +53,10 @@ namespace EnableGPlayWithPC
                 return;
             }
 
+#if !DEBUG
             try
             {
+#endif
                 var device = AdbClient.Instance.GetDevices().First();
 
                 if (AdbClient.Instance.GetDevices().Count > 1)
@@ -138,6 +140,7 @@ namespace EnableGPlayWithPC
                         return;
                     }
                 }
+#if !DEBUG
             }
             catch (Exception)
             {
@@ -145,14 +148,15 @@ namespace EnableGPlayWithPC
                     Properties.Resources.Dialog_UnableToConnect_Desc, this.Handle);
                 return;
             }
+#endif
 
             var dialog = new TaskDialog();
-            dialog.Caption = "Enable GPlay With PC";
-            dialog.InstructionText = Properties.Resources.Dialog_Successed_Inst;
-            dialog.Text = Properties.Resources.Dialog_Successed_Desc;
-            dialog.Icon = TaskDialogStandardIcon.Information;
-            dialog.OwnerWindowHandle = Handle;
-            dialog.Show();
+                dialog.Caption = "Enable GPlay With PC";
+                dialog.InstructionText = Properties.Resources.Dialog_Successed_Inst;
+                dialog.Text = Properties.Resources.Dialog_Successed_Desc;
+                dialog.Icon = TaskDialogStandardIcon.Information;
+                dialog.OwnerWindowHandle = Handle;
+                dialog.Show();
         }
 
         private string[] GetSelectedPath()
