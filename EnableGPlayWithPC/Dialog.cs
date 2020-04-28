@@ -31,6 +31,9 @@ namespace EnableGPlayWithPC
             dialog.Icon = TaskDialogStandardIcon.Error;
             dialog.OwnerWindowHandle = handle;
 
+            dialog.InstructionText = instruction;
+            dialog.Text = desc;
+
             dialog.DetailsCollapsedLabel = Properties.Resources.NotGranted_ShowDetail;
             dialog.DetailsExpandedLabel = Properties.Resources.NotGranted_HideDetail;
             dialog.DetailsExpandedText = detail;

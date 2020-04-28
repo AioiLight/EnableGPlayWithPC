@@ -43,7 +43,9 @@ namespace EnableGPlayWithPC
                 var cmd = $"pm grant {packageName} {Permissions.Prefix}{perm}";
                 AdbClient.Instance.ExecuteRemoteCommand(cmd, device, receiver);
 
-                if (!IsPermissionGranted(receiver.ToString()))
+                var result = receiver.ToString();
+
+                if (!IsPermissionGranted(result))
                 {
                     if (!Dialog.NotGranted(
                         string.Format(Properties.Resources.Dialog_PermNotGranted_Inst,
@@ -51,7 +53,7 @@ namespace EnableGPlayWithPC
                         string.Format(Properties.Resources.Dialog_PermNotGranted_Desc,
                             Packages.Vending,
                             perm),
-                        receiver.ToString(),
+                        result.Length > 128 ? result.Substring(0, 128) + "..." : result,
                         handle))
                     {
                         // 権限付与に失敗してなおかつキャンセルされた
