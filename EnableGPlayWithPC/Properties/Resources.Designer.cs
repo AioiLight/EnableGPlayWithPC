@@ -136,7 +136,7 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
-        ///   Benesse tablet not found. に類似しているローカライズされた文字列を検索します。
+        ///   Benesse tablet not found に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Dialog_Not_Benesse_Tab_Inst {
             get {
@@ -145,7 +145,8 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
-        ///   Unable to grant permission to {0} に類似しているローカライズされた文字列を検索します。
+        ///   Unable to grant &quot;{0}&quot; permission to {1}.
+        ///Apps may not work perfectly. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Dialog_PermNotGranted_Desc {
             get {
@@ -154,8 +155,7 @@ namespace EnableGPlayWithPC.Properties {
         }
         
         /// <summary>
-        ///   Unable to grant &quot;{0}&quot; permission to {1}.
-        ///Apps may not work perfectly. に類似しているローカライズされた文字列を検索します。
+        ///   Unable to grant permission to {0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Dialog_PermNotGranted_Inst {
             get {
