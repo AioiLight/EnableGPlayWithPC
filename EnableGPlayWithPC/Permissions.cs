@@ -16,16 +16,14 @@
         internal static string[] GMS = new string[]
         {
             "READ_LOGS",
-            "WRITE_SECURE_SETTINGS",
-            "INTERACT_ACROSS_USERS",
             "GET_APP_OPS_STATS"
         };
 
         internal static string[] GSF = new string[]
         {
             "DUMP",
-            "GET_APP_OPS_STATS",
-            "WRITE_SECURE_SETTINGS"
+            "WRITE_SECURE_SETTINGS",
+            "INTERACT_ACROSS_USERS"
         };
     }
 }
