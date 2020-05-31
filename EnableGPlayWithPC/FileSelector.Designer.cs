@@ -48,11 +48,14 @@
             // 
             // FileSelector
             // 
+            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TextBox_Path);
             this.Controls.Add(this.Button_FileOpen);
             this.Name = "FileSelector";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.FileSelector_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.FileSelector_DragEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
@@ -40,6 +41,20 @@ namespace EnableGPlayWithPC
             {
                 TextBox_Path.Text = dialog.FileName;
             }
+        }
+
+        private void FileSelector_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void FileSelector_DragDrop(object sender, DragEventArgs e)
+        {
+            var filePath = ((string[])e.Data.GetData(DataFormats.FileDrop)).First();
+            TextBox_Path.Text = filePath;
         }
     }
 }
